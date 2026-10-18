@@ -64,9 +64,9 @@ except ImportError as exc:
 
 
 DEFAULT_FILES = (
-    "/Users/4c/Desktop/GHQ/data/loto7_4704_k83.csv",
-    "/Users/4c/Desktop/GHQ/data/loto7_4704_k83_loto_2974.csv",
-    "/Users/4c/Desktop/GHQ/data/loto7_4704_k83_loto_plus_1730.csv",
+    "/data/loto7_4704_k83.csv",
+    "/data/loto7_4704_k83_loto_2974.csv",
+    "/data/loto7_4704_k83_loto_plus_1730.csv",
 )
 
 LAGS = (1, 2, 4, 8, 16, 32)
@@ -1038,7 +1038,7 @@ Prognoze potpuno u jednoj polovini: 0
     LightGBM glava 6/7
     LightGBM glava 7/7
 
-FINALNI NEXT: 1, 8, 9, 11, 23, 32, 37
+FINALNI NEXT: 1, x, 9, y, 23, z, 37
 Zajednički modelski skor: 4.94326618004e-07
 Posećenih čvorova pretrage: 9
 Najduži uzastopni niz: 2
@@ -1103,7 +1103,7 @@ Prognoze potpuno u jednoj polovini: 0
     LightGBM glava 6/7
     LightGBM glava 7/7
 
-FINALNI NEXT: 2, 8, 13, 18, 25, 30, 39
+FINALNI NEXT: 2, x, 13, y, 25, z, 39
 Zajednički modelski skor: 3.74618193727e-07
 Posećenih čvorova pretrage: 7
 Najduži uzastopni niz: 1
@@ -1169,7 +1169,7 @@ Prognoze potpuno u jednoj polovini: 0
     LightGBM glava 6/7
     LightGBM glava 7/7
 
-FINALNI NEXT: 2, 5, 10, 23, 27, 29, 39
+FINALNI NEXT: 2, x, 10, y, 27, z, 39
 Zajednički modelski skor: 1.92781180899e-07
 Posećenih čvorova pretrage: 39
 Najduži uzastopni niz: 1
@@ -1180,9 +1180,9 @@ Modelski skor je nenormalizovan zajednički skor za rangiranje legalnih kombinac
 
 ============================================================================
 ZAVRŠNI PREGLED
-loto7_4704_k83.csv: 1, 8, 9, 11, 23, 32, 37
-loto7_4704_k83_loto_2974.csv: 2, 8, 13, 18, 25, 30, 39
-loto7_4704_k83_loto_plus_1730.csv: 2, 5, 10, 23, 27, 29, 39
+loto7_4704_k83.csv: 1, x, 9, y, 23, z, 37
+loto7_4704_k83_loto_2974.csv: 2, x, 13, y, 25, z, 39
+loto7_4704_k83_loto_plus_1730.csv: 2, x, 10, y, 27, z, 39
 """
 
 
@@ -1191,7 +1191,7 @@ loto7_4704_k83_loto_plus_1730.csv: 2, 5, 10, 23, 27, 29, 39
 zajednička mreža sa više izlaznih glava, LightGBM sa vremenskim ponderisanjem i Bayesova komponenta, spojeni u ansambl 
 
 - Učitavanje tri cela CSV-a i zasebno treniranje za svaki.
-- Prilagođavanje četiri cifarske glave zajedničkom izboru sedam različitih brojeva 1-39.- Izostavljanje kalendarskih i numeroloških dodataka, jer naši CSV-ovi nemaju te podatke.
+- Prilagođavanje četiri cifarske glave zajedničkom izboru sedam različitih brojeva 1-39. 
 
 Ansambl koristi fiksne pondere 50/35/15, a provera jednu hronološku podelu 75/25. 
 Tokom te provere kontekst ostaje zamrznut na kraju treninga — taj deo za svako naredno kolo koristi tada dostupnu istoriju.
